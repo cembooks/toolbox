@@ -1,0 +1,5 @@
+#!/bin/bash
+
+cmake -DCMAKE_BUILD_TYPE=Debug -DDEAL_II_DIR=${DEAL_II_DIR} ../.. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+cmake --build . -j8 #--verbose
+

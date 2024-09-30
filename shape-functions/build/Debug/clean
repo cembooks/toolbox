@@ -1,0 +1,8 @@
+#!/bin/bash
+
+rm -rf `ls -I build -I clean`
+rm -rf ../../.cache
+rm -rf ../../bin/Debug/*
+
+mkdir ../../bin/Debug/Data
+
