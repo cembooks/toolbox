@@ -1,0 +1,6 @@
+/home/siarhei/Documents/fem/cem/dealii/static/mms/build/Debug/CMakeFiles/rebuild_cache.dir
+/home/siarhei/Documents/fem/cem/dealii/static/mms/build/Debug/CMakeFiles/edit_cache.dir
+/home/siarhei/Documents/fem/cem/dealii/static/mms/build/Debug/CMakeFiles/mms-sphere.dir
+/home/siarhei/Documents/fem/cem/dealii/static/mms/build/Debug/CMakeFiles/mms-circle.dir
+/home/siarhei/Documents/fem/cem/dealii/static/mms/build/Debug/CMakeFiles/mms-cube.dir
+/home/siarhei/Documents/fem/cem/dealii/static/mms/build/Debug/CMakeFiles/mms-square.dir
