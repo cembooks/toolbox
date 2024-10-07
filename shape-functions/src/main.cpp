@@ -116,13 +116,13 @@ void ShapeFunctions<2>::make_mesh()
 	if (combined_face_orientation % 2 == 0)
 	{
 		cell_left.vertices = {3, 0, 2, 1};
-		cell_right.vertices = {0, 3, 1, 2};
+		cell_right.vertices = {2, 1, 3, 0};
 	}
 	else
 	{
- 		cell_left.vertices = {3, 0, 2, 1};
-		cell_right.vertices = {3, 0, 2, 1};
-  }
+		cell_left.vertices = {3, 0, 2, 1};
+		cell_right.vertices = {0, 3, 1, 2};
+ }
 
 	std::cout << "Two one-cell meshes --------------------------------\n";
 
@@ -147,8 +147,8 @@ void ShapeFunctions<2>::make_mesh()
 	GridGenerator::merge_triangulations(triangulation_left, triangulation_right, triangulation);
 
 	// Now we have three meshes:
-	// triangulation_left - single cell in the third octant; the origin is a vertex. 
-	// triangulation_right - single cell in the second octant; the origin is a vertex. 
+	// triangulation_left - single cell in the second quadrant; the origin is a vertex. 
+	// triangulation_right - single cell in the first quadrant; the origin is a vertex. 
 	// triangulation - exactly the same two cells combined in one mesh. 
 
 	// Save the combined mesh.
