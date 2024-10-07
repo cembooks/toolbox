@@ -71,8 +71,9 @@ the combined orientation and are computed as
 
     orientation_no = face_flip*4 + face_rotation*2 + face_orientation*1;
 
-See tria_orientation.h. The three boolean parameters in the last equation have the following
-meaning:
+See
+[tria_orientation.h](https://github.com/dealii/dealii/blob/master/include/deal.II/grid/tria_orientation.h).
+The three boolean parameters in the last equation have the following meaning:
 
 >face_orientation - true if face is in standard orientation and false otherwise;  
 >face_rotation - rotation by 90 deg counterclockwise if true;  
