@@ -13,8 +13,7 @@ function in grid_tools_topology.cc:
 template <int dim>
 void
 consistently_order_cells(std::vector<CellData<dim>> &cells)
-{
-/*
+{/*
    Assert(cells.size() != 0,
            ExcMessage(
              "List of elements to orient must have at least one cell"));
@@ -38,8 +37,7 @@ consistently_order_cells(std::vector<CellData<dim>> &cells)
           if (dim < 3)
             throw;
         }
-*/  
-  }
+*/}
 
 ![][fig-shape-finctions]
 
