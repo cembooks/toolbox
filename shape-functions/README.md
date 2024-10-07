@@ -73,10 +73,11 @@ the combined orientation and are computed as
 
 See tria_orientation.h. The three boolean parameters in the last equation have the following
 meaning:
->face_orientation - true if face is in standard orientation
-and false otherwise;
->face_rotation - rotation by 90 deg counterclockwise if true;
->face_flip - rotation by 180 deg counterclockwise if true.
+
+>face_orientation - true if face is in standard orientation and false otherwise;  
+>face_rotation - rotation by 90 deg counterclockwise if true;  
+>face_flip - rotation by 180 deg counterclockwise if true.  
+
 See the documentation of GeometryInfo<dim>.
 
 [fig-shape-finctions]: doc/shape-functions.png
