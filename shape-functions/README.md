@@ -10,7 +10,6 @@ fix nr.1". It can also be used for verification.
 For this program to work properly, one needs to comment out the content of a 
 function in grid_tools_topology.cc:
 
-@code
   template <int dim>
   void
   consistently_order_cells(std::vector<CellData<dim>> &cells)
@@ -41,7 +40,6 @@ function in grid_tools_topology.cc:
         }
 */  
   }
-@endcode
 
 ![][fig-shape-finctions]
 
