@@ -3,11 +3,11 @@
 <h2> Introduction </h2>
 
 This program was used to compose the swap tables in the pull "Nedelec orientation
-fix nr.1". It can also be used for verification. 
+fix nr.1". It can also be used for verification.
 
 <h2> Operation </h2>
 
-For this program to work properly, one needs to comment out the content of a 
+For this program to work properly, one needs to comment out the content of a
 function in grid_tools_topology.cc:
 
     template <int dim>
@@ -36,39 +36,37 @@ function in grid_tools_topology.cc:
           // not in 2d; in that case, re-throw the exception
           if (dim < 3)
             throw;
-          } 
+          }
      */}
 
 This function being enabled reorders the mesh what makes test of certain face orientation impossible.
 
 The shape-functions programs allows to plot shape functions on three meshes: two separate one-cell meshes
-and one two-cells mesh which is derived by merging together the two separate one-cell meshes. The figure 
-below illustrates such plots. 
+and one two-cells mesh. The two-cells mesh is derived by merging together the two separate one-cell meshes.
+The figure below illustrates such plots.
 
 ![][fig-shape-finctions]
 
-The plot on the left illustrates an overlay of the first shape functions on the shared face of the two 
-separate one-cell meshes. From this plot one can deduce that a swap of the shape functions is needed. 
-The plot on the right illustrates the corresponding shape function on the two-cells mesh. It suggests  
-that the swap and the sign change encoded in the swap table are correct as the shape functions in both 
-cells are oriented consistently.   
+The plot on the left illustrates an overlay of the first shape functions on the shared face of the two
+separate one-cell meshes. From this plot one can deduce that a swap of the shape functions is needed.
+The plot on the right illustrates the corresponding shape function on the two-cells mesh. It suggests
+that the swap and the sign change encoded in the swap table are correct as the shape functions in both
+cells are oriented consistently.
 
 All controls of the shape-functions program are located in the last two lines of the CMakeLists.txt:
 
-    target_compile_options(${TARGET} PRIVATE -DDIMENSION__=2 -DFEDEGREE__=2 
+    target_compile_options(${TARGET} PRIVATE -DDIMENSION__=2 -DFEDEGREE__=2
          -DFACEORIENTATION__=0)
 
-The macro definition DIMENSION__ can take two values: 2 and 3.  It corresponds to the parameter dim 
+The macro definition DIMENSION__ can take two values: 2 and 3.  It corresponds to the parameter dim
 in deal.II.
 
-The macro definition FEDEGREE__ must be non-negative integer. This is the degree of the Nedelec 
+The macro definition FEDEGREE__ must be non-negative integer. This is the degree of the Nedelec
 finite element being tested, i.e., FE_NEDELEC<DIMENSION__> fe(FEDEGREE__).
 
 The macro definition FACEORIENTATION__ in two dimensions encodes the orientation of the shared edge:
-0 - opposite orientation, 1 - normal orientation. In three dimensions the macro definition 
-FACEORIENTATION__ can take the following values: 0, 1, 2, 3, 4, 5, 6, or 7. 
- 
-
+0 - opposite orientation, 1 - normal orientation. In three dimensions the macro definition
+FACEORIENTATION__ can take the following values: 0, 1, 2, 3, 4, 5, 6, or 7.
 
 [fig-shape-finctions]: doc/shape-functions.png
 
