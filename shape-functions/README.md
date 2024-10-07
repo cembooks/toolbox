@@ -39,9 +39,9 @@ function in grid_tools_topology.cc:
           }
      */}
 
-This function being enabled reorders the mesh what makes test of certain face orientation impossible.
+This function being enabled reorders the mesh what makes test of certain face orientations impossible.
 
-The shape-functions programs allows to plot shape functions on three meshes: two separate one-cell meshes
+The shape-functions program allows to plot shape functions on three meshes: two separate one-cell meshes
 and one two-cells mesh. The two-cells mesh is derived by merging together the two separate one-cell meshes.
 The figure below illustrates such plots.
 
@@ -66,7 +66,18 @@ finite element being tested, i.e., FE_NEDELEC<DIMENSION__> fe(FEDEGREE__).
 
 The macro definition FACEORIENTATION__ in two dimensions encodes the orientation of the shared edge:
 0 - opposite orientation, 1 - normal orientation. In three dimensions the macro definition
-FACEORIENTATION__ can take the following values: 0, 1, 2, 3, 4, 5, 6, or 7.
+FACEORIENTATION__ can take the following values: 0, 1, 2, 3, 4, 5, 6, or 7. This numbers are
+the combined orientation and are computed as
+
+    orientation_no = face_flip*4 + face_rotation*2 + face_orientation*1;
+
+See tria_orientation.h. The three boolean parameters in the last equation have the following
+meaning:
+>face_orientation - true if face is in standard orientation
+and false otherwise;
+>face_rotation - rotation by 90 deg counterclockwise if true;
+>face_flip - rotation by 180 deg counterclockwise if true.
+See the documentation of GeometryInfo<dim>.
 
 [fig-shape-finctions]: doc/shape-functions.png
 
