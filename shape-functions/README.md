@@ -39,7 +39,36 @@ function in grid_tools_topology.cc:
           } 
      */}
 
+This function being enabled reorders the mesh what makes test of certain face orientation impossible.
+
+The shape-functions programs allows to plot shape functions on three meshes: two separate one-cell meshes
+and one two-cells mesh which is derived by merging together the two separate one-cell meshes. The figure 
+below illustrates such plots. 
+
 ![][fig-shape-finctions]
+
+The plot on the left illustrates an overlay of the first shape functions on the shared face of the two 
+separate one-cell meshes. From this plot one can deduce that a swap of the shape functions is needed. 
+The plot on the right illustrates the corresponding shape function on the two-cells mesh. It suggests  
+that the swap and the sign change encoded in the swap table are correct as the shape functions in both 
+cells are oriented consistently.   
+
+All controls of the shape-functions program are located in the last two lines of the CMakeLists.txt:
+
+    target_compile_options(${TARGET} PRIVATE -DDIMENSION__=2 -DFEDEGREE__=2 
+         -DFACEORIENTATION__=0)
+
+The macro definition DIMENSION__ can take two values: 2 and 3.  It corresponds to the parameter dim 
+in deal.II.
+
+The macro definition FEDEGREE__ must be non-negative integer. This is the degree of the Nedelec 
+finite element being tested, i.e., FE_NEDELEC<DIMENSION__> fe(FEDEGREE__).
+
+The macro definition FACEORIENTATION__ in two dimensions encodes the orientation of the shared edge:
+0 - opposite orientation, 1 - normal orientation. In three dimensions the macro definition 
+FACEORIENTATION__ can take the following values: 0, 1, 2, 3, 4, 5, 6, or 7. 
+ 
+
 
 [fig-shape-finctions]: doc/shape-functions.png
 
