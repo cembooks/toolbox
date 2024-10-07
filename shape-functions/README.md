@@ -8,7 +8,8 @@ fix nr.1". It can also be used for verification.
 <h2> Operation </h2>
 
 For this program to work properly, one needs to comment out the content of a
-function in grid_tools_topology.cc:
+function in 
+[grid_tools_topology.cc](https://github.com/dealii/dealii/blob/master/source/grid/grid_tools_topology.cc#L1613):
 
     template <int dim>
     void
@@ -53,7 +54,8 @@ The plot on the right illustrates the corresponding shape function on the two-ce
 that the swap and the sign change encoded in the swap table are correct as the shape functions in both
 cells are oriented consistently.
 
-All controls of the shape-functions program are located in the last two lines of the CMakeLists.txt:
+All controls of the shape-functions program are located in the last two lines of the 
+[CMakeLists.txt](https://github.com/cembooks/toolbox/blob/main/shape-functions/CMakeLists.txt):
 
     target_compile_options(${TARGET} PRIVATE -DDIMENSION__=2 -DFEDEGREE__=2
          -DFACEORIENTATION__=0)
