@@ -78,7 +78,10 @@ meaning:
 >face_rotation - rotation by 90 deg counterclockwise if true;  
 >face_flip - rotation by 180 deg counterclockwise if true.  
 
-See the documentation of GeometryInfo<dim>.
+See the documentation of
+[GeometryInfo<dim>](https://dealii.org/current/doxygen/deal.II/structGeometryInfo.html).
+
+
 
 [fig-shape-finctions]: doc/shape-functions.png
 
