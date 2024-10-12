@@ -20,7 +20,7 @@ set(SOURCE_FILES "src/main.cpp")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
-find_package(deal.II 9.6.0 QUIET HINTS /home/siarhei/dealii-9.6.0)
+find_package(deal.II 9.6.0 QUIET HINTS /home/siarhei/dealii-9.6.0-nedelec)
 
 if(NOT ${deal.II_FOUND})
 message(FATAL_ERROR "\n"
@@ -44,6 +44,7 @@ set_target_properties(${TARGET}
 
 message(STATUS "TARGET=${TARGET}")
 
-target_compile_options(${TARGET} PRIVATE -DDIMENSION__=2 -DFEDEGREE__=2 
-	-DFACEORIENTATION__=0)
+target_compile_options(${TARGET} PRIVATE -DDIMENSION__=3 -DFEDEGREE__=0 
+	-DFACEORIENTATION__=3
+	)
 
