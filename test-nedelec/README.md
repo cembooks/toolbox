@@ -6,6 +6,9 @@ $\vec{A}_{2D} = \dfrac{1}{k}\big(-\sin{(ky)}\hat{i} + \sin{(kx)} \hat{j}\big)$
 
 $\vec{A}_{3D} = \dfrac{1}{k}\big(-\sin{(ky)}\hat{i} + \sin{(kx)} \hat{j} + 0 \hat{k} \big) $
 
+$k = \dfrac{\pi}{2} $
+
+
 <h2> Operation </h2>
 
 ![][figure]
