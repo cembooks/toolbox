@@ -512,10 +512,10 @@ main()
       tables.at(p).clear();
       for (unsigned int r = 0; r < 3; r++)
         {
-          tables.at(p).add_value("r", r);
+          tables.at(p).add_value("r", r+r0);
           tables.at(p).add_value("p", p);
 
-          TestNedelec<DIMENSION__> test(p, r0 + r);
+          TestNedelec<DIMENSION__> test(p, r+r0);
           test.run();
 
           tables.at(p).add_value("ndofs", test.get_n_dofs());
