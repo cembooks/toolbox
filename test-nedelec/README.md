@@ -6,5 +6,5 @@
 
 ![][figure]
 
-[figure]: doc/fugure.svg
+[figure]: doc/figure.svg
 
