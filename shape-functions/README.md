@@ -2,8 +2,7 @@
 
 <h2> Introduction </h2>
 
-This program was used to compose the swap tables in the pull "Nedelec orientation
-fix nr.1". It can also be used for verification.
+This program can be used for verification of the pull "Nedelec orientation fix nr.1".
 
 <h2> Operation </h2>
 
@@ -13,8 +12,9 @@ The figure below illustrates such plots.
 
 ![][fig-shape-finctions]
 
-The idea is simple: compose the swap tables such that the shape functions are continuous on the 
-faces shared between the cells for all possible face orientations.
+The idea for verification is simple: plot shape functions for all possible
+orientations of the shared face and observe that the tangential components 
+of the shape functions on the shared faces are continues.
 
 All controls of the shape-functions program are located in the last two lines of the 
 [CMakeLists.txt](https://github.com/cembooks/toolbox/blob/main/shape-functions/CMakeLists.txt):
