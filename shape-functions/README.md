@@ -29,7 +29,9 @@ The macro definition FEDEGREE__ must be non-negative integer. This is the degree
 finite element being tested, i.e., FE_Nedelec<DIMENSION__> fe(FEDEGREE__).
 
 The macro definition FACEORIENTATION__ in two dimensions encodes the orientation of the middle cell,
-see the documentation of non_standard_orientation_mesh(). In three dimensions the macro definition
+see the documentation of
+[non_standard_orientation_mesh()](https://dealii.org/current/doxygen/deal.II/namespaceGridGenerator.html#a895c9a3d608c8b48459eadf739dba604). 
+In three dimensions the macro definition
 FACEORIENTATION__ can take the following values: 0, 1, 2, 3, 4, 5, 6, or 7. This numbers are
 the combined orientation and are computed as
 
