@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -rf `ls -I build -I clean`
+rm -rf ../../.cache
+rm -rf ../../bin/Release/*
+
+mkdir ../../bin/Release/Data
+touch ../../bin/Release/Data/.placeholder
+
