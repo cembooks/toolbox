@@ -48,7 +48,8 @@ The three boolean parameters in the last equation have the following meaning:
 See the documentation of
 [GeometryInfo<dim>](https://dealii.org/current/doxygen/deal.II/structGeometryInfo.html)
 
-and documentation of non_standard_orientation_mesh().
+and documentation of 
+[non_standard_orientation_mesh()](https://dealii.org/current/doxygen/deal.II/namespaceGridGenerator.html#af7faa3e36d4333d03a3cc865142f3d2f).
 
 [fig-shape-finctions]: doc/figure.svg
 
