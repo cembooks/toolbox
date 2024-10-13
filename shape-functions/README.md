@@ -48,5 +48,5 @@ See the documentation of
 
 and documentation of non_standard_orientation_mesh().
 
-[fig-shape-finctions]: doc/fugure.svg
+[fig-shape-finctions]: doc/figure.svg
 
