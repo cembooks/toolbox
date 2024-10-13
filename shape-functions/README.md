@@ -26,7 +26,7 @@ The macro definition DIMENSION__ can take two values: 2 and 3.  It corresponds t
 in deal.II.
 
 The macro definition FEDEGREE__ must be non-negative integer. This is the degree of the Nedelec
-finite element being tested, i.e., FE_NEDELEC<DIMENSION__> fe(FEDEGREE__).
+finite element being tested, i.e., FE_Nedelec<DIMENSION__> fe(FEDEGREE__).
 
 The macro definition FACEORIENTATION__ in two dimensions encodes the orientation of the middle cell,
 see the documentation of non_standard_orientation_mesh(). In three dimensions the macro definition
