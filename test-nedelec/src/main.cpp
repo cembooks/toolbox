@@ -81,8 +81,7 @@ public:
 
 private:
   int                      dimensions;
-  std::vector<std::string> new_order =
-    {"p", "r", "ncells", "ndofs", "L2"};
+  std::vector<std::string> new_order = {"p", "r", "ncells", "ndofs", "L2"};
 };
 
 template <int dim>
@@ -272,7 +271,24 @@ TestNedelec<dim>::TestNedelec(unsigned int degree, unsigned int nr_ref)
   , fe(degree)
   , dof_handler(triangulation)
   , VE(0)
-{}
+{
+  if (dim == 2)
+    if (combined_face_orientation > 3)
+      {
+        std::cout << "Error. In the two-dimensional space the macro definition \
+FACEORIENTATION__ must be in the range 0...3.\n";
+        return;
+      }
+
+  if (dim == 3)
+    if (combined_face_orientation > 7)
+      {
+        std::cout
+          << "Error. In the three-dimensional space the macro definition \
+FACEORIENTATION__ must be in the range 0...7.\n";
+        return;
+      }
+}
 
 template <>
 void
@@ -512,10 +528,10 @@ main()
       tables.at(p).clear();
       for (unsigned int r = 0; r < 3; r++)
         {
-          tables.at(p).add_value("r", r+r0);
+          tables.at(p).add_value("r", r + r0);
           tables.at(p).add_value("p", p);
 
-          TestNedelec<DIMENSION__> test(p, r+r0);
+          TestNedelec<DIMENSION__> test(p, r + r0);
           test.run();
 
           tables.at(p).add_value("ndofs", test.get_n_dofs());
